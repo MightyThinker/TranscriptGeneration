@@ -7,6 +7,9 @@ setup_logging()
 logger = logging.getLogger(__name__)
 
 def extract_audio(video_file, audio_file):
+    if os.path.exists(audio_file):
+        logger.info(f"Audio file {audio_file} already exists. Skipping extraction.")
+        return
     try:
         video = AudioSegment.from_file(video_file)
         video.export(audio_file, format="wav")

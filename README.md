@@ -1,6 +1,8 @@
 # Transcript Generation Using Python  
 
-Python Application to generate transcription from video files.  
+Python Application to generate transcription and summary from video files.  
+
+Files will be skipped if it has been processed earlier.
 
 ### Required Software and Packages
 

@@ -31,13 +31,16 @@ if __name__ == "__main__":
 
     transcript_files = [f for f in os.listdir(transcript_folder) if f.endswith('.txt')]
     for transcript_file in transcript_files:
+        summary_file = os.path.join(summary_folder, f"{os.path.splitext(transcript_file)[0]}_summary.txt")
+        if os.path.exists(summary_file):
+            logger.info(f"Summary file {summary_file} already exists. Skipping summarization.")
+            continue
         logger.info(f"Summarizing {transcript_file}")
         with open(os.path.join(transcript_folder, transcript_file), "r") as f:
             transcript = f.read()
 
         summary = summarize_long_text(transcript)
 
-        summary_file = os.path.join(summary_folder, f"{os.path.splitext(transcript_file)[0]}_summary.txt")
         with open(summary_file, "w") as f:
             f.write(summary)
         logger.info(f"Summary completed for {transcript_file}")

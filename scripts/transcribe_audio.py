@@ -40,9 +40,12 @@ if __name__ == "__main__":
 
     audio_files = [f for f in os.listdir(audio_folder) if f.endswith('.wav')]
     for audio in audio_files:
+        transcript_file = os.path.join(transcript_folder, f"{os.path.splitext(audio)[0]}.txt")
+        if os.path.exists(transcript_file):
+            logger.info(f"Transcript file {transcript_file} already exists. Skipping transcription.")
+            continue
         logger.info(f"Transcribing {audio}")
         transcript = transcribe_audio(os.path.join(audio_folder, audio))
-        transcript_file = os.path.join(transcript_folder, f"{os.path.splitext(audio)[0]}.txt")
         with open(transcript_file, "w") as f:
             f.write(transcript)
         logger.info(f"Transcription completed for {audio}")
