@@ -1,4 +1,4 @@
-# TranscriptGeneration  
+# Transcript Generation Using Python  
 
 Python Application to generate transcription from video files.  
 
@@ -29,4 +29,10 @@ Python Application to generate transcription from video files.
     - `summaries` : it will store the summary from our transcripts.  
 
     - `scripts` : it will store all the script and requred to convert transcript from video files.  
+
+### Run Script
+
+We can run application to generate trabnscription and summary using this command : **``python3 scripts/process_videos.py``**
+
+**Note:** We can modify the code according to Python Version and Software Package Compatibility.  
 
