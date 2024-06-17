@@ -36,3 +36,4 @@ We can run application to generate trabnscription and summary using this command
 
 **Note:** We can modify the code according to Python Version and Software Package Compatibility.  
 
+`Logger has been implemented and we can have a log file here also to know which methods have been called.`
